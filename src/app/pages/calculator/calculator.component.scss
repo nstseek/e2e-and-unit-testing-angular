@@ -1,0 +1,24 @@
+div.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div.fields {
+    margin-right: 25px;
+    form {
+      display: flex;
+      flex-direction: column;
+      input:disabled {
+        color: unset;
+      }
+    }
+  }
+  div.operators {
+    display: flex;
+    max-width: 40px;
+    flex-direction: column;
+    & > button {
+      margin-top: 10px;
+      padding: 0;
+    }
+  }
+}

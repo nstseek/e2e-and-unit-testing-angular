@@ -1,0 +1,24 @@
+<div class='container'>
+  <div class='fields'>
+    <form [formGroup]="form">
+      <mat-form-field>
+      <input matInput formControlName="{{ form.controls.operand_a.name }}" placeholder="Digite um valor..." type="number" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="{{ form.controls.operand_b.name }}" placeholder="Digite um valor..." type="number" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="{{ form.controls.result.name }}" placeholder="Seu resultado aparece aqui"  type="number" />
+      </mat-form-field>
+    </form>
+  </div>
+  <div class='operators'>
+    <mat-button-toggle-group #operator="matButtonToggleGroup" name="operator" aria-label="Operator" vertical>
+      <mat-button-toggle value='+'>+</mat-button-toggle>
+      <mat-button-toggle value='-'>-</mat-button-toggle>
+      <mat-button-toggle value='*'>*</mat-button-toggle>
+      <mat-button-toggle value='/'>/</mat-button-toggle>
+    </mat-button-toggle-group>
+    <button mat-mini-fab (click)="updateValues()">=</button>
+  </div>
+</div>
