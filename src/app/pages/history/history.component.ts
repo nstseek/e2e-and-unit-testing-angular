@@ -10,8 +10,8 @@ import {
   styleUrls: ['./history.component.scss']
 })
 export class HistoryComponent {
-  history: CalculatorHistory = JSON.parse(
-    localStorage.getItem(LocalStorageKeys.History)
-  );
-  constructor() {}
+  history: CalculatorHistory;
+  constructor() {
+    this.history = JSON.parse(localStorage.getItem(LocalStorageKeys.History));
+  }
 }

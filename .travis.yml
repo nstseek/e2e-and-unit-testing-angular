@@ -8,7 +8,7 @@ jobs:
   include:
     - stage: "prepare"
       script:
-        - npm install
+        - npm i
     - stage: "test"
       script:
         - npm run lint
@@ -18,5 +18,4 @@ jobs:
         - npm run build
     - stage: "deploy"
       script:
-        - npm i -g firebase-tools
-        - firebase deploy --token "$FIREBASE_TOKEN"
+        - npm run deploy

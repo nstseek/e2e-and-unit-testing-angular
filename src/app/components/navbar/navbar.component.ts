@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,12 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements DoCheck {
-  route = '/';
-
+export class NavbarComponent {
   constructor(private router: Router) {}
 
-  ngDoCheck() {
-    this.route = this.router.url;
+  get route() {
+    return this.router.url;
   }
 }

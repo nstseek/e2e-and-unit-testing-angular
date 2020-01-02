@@ -24,11 +24,14 @@ const formObject: FormObject = {
 })
 export class CalculatorComponent implements OnInit {
   @ViewChild('operator', { static: null }) operatorGroup: MatButtonToggleGroup;
-  form: TypedFormGroup<Form, FormObject> = (this.fb.group(
-    formObject
-  ) as unknown) as TypedFormGroup<Form, FormObject>;
+  form: TypedFormGroup<Form, FormObject>;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.form = (this.fb.group(formObject) as unknown) as TypedFormGroup<
+      Form,
+      FormObject
+    >;
+  }
 
   ngOnInit() {
     this.form.controls.result.disable();
