@@ -2,7 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="true ? 'dialog' : 'navigation'"
       [mode]="true ? 'over' : 'side'"
-      [opened]="true === false">
+      [opened]="false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item [class.selected]="route === '/calculator'" [routerLink]="'calculator'">Calculadora</a>
