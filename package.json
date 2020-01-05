@@ -7,7 +7,7 @@
     "build": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e --port 5000",
     "deploy": "firebase deploy --token $FIREBASE_TOKEN"
   },
   "private": true,
@@ -51,7 +51,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint && npm run test && npm run build && npm run e2e"
+      "pre-push": "npm run lint && npm run test && npm run e2e && npm run build "
     }
   }
 }

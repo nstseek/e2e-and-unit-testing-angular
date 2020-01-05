@@ -12,4 +12,11 @@ export class NavbarComponent {
   get route() {
     return this.router.url;
   }
+
+  closeMenu() {
+    document
+      .querySelector(
+        'body > app-root > app-navbar > mat-sidenav-container > div.mat-drawer-backdrop.ng-star-inserted'
+      ).dispatchEvent(new Event('click'));
+  }
 }
